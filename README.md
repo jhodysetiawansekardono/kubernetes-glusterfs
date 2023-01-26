@@ -1,1 +1,1 @@
-# kubernetes-glusterfs
+# kubernetes-heketi
