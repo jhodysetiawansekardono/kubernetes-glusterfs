@@ -65,28 +65,6 @@
             "lvm_wrapper": ""
           },
       
-          "_kubeexec_comment": "Kubernetes configuration",
-          "kubeexec": {
-            "host" :"https://kubernetes.host:8443",
-            "cert" : "/path/to/crt.file",
-            "insecure": false,
-            "user": "kubernetes username",
-            "password": "password for kubernetes user",
-            "namespace": "OpenShift project or Kubernetes namespace",
-            "fstab": "Optional: Specify fstab file on node.  Default is /etc/fstab",
-            "mountopts": "Optional: Specify brick mount options.  Default is rw,inode64,noatime,nouuid",
-            "pv_data_alignment": "Optional: Specify PV data alignment size. Default is 256K",
-            "vg_physicalextentsize": "Optional: Specify VG physical extent size. Default is 4MB",
-            "lv_chunksize": "Optional: Specify LV chunksize. Default is 256K",
-            "xfs_sw": "Optional: Specify number of data disks in the underlying RAID device.",
-            "xfs_su": "Optional: Specifies a stripe unit or RAID chunk size.",
-            "backup_lvm_metadata": false,
-            "gluster_cli_timeout": "Optional: Timeout, in seconds, passed to the gluster cli invocations",
-            "_debug_umount_failures": "Optional: boolean to capture more details in case brick unmounting fails",
-            "debug_umount_failures": true,
-            "lvm_wrapper": ""
-          },
-      
           "_db_comment": "Database file name",
           "db": "/var/lib/heketi/heketi.db",
       
