@@ -9,7 +9,7 @@
                   "jh-k8s-master001"
                 ],
                 "storage": [
-                  "jh-k8s-master001"
+                  "10.15.0.11"
                 ]
               },
               "zone": 1
@@ -25,7 +25,7 @@
                   "jh-k8s-master002"
                 ],
                 "storage": [
-                  "jh-k8s-master002"
+                  "10.15.0.12"
                 ]
               },
               "zone": 1
@@ -41,7 +41,7 @@
                   "jh-k8s-master003"
                 ],
                 "storage": [
-                  "jh-k8s-master003"
+                  "10.15.0.13"
                 ]
               },
               "zone": 1
