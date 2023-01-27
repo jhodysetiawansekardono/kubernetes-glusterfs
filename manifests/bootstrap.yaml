@@ -64,4 +64,4 @@ spec:
       - name: db
       - name: config
         secret:
-          secretName: heketi-config-secret
+          secretName: heketi-config
