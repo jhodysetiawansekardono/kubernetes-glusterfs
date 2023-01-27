@@ -10,7 +10,7 @@ metadata:
     description: Exposes Heketi Service
 spec:
   selector:
-    bootstrap-heketi: pod
+    bootstrap-heketi: app
   ports:
   - name: bootstrap-heketi
     port: 8080
@@ -22,19 +22,19 @@ metadata:
   name: bootstrap-heketi
   namespace: heketi
   labels:
-    bootstrap-heketi: deployment
+    bootstrap-heketi: app
   annotations:
     description: Defines how to deploy Heketi
 spec:
   replicas: 1
   selector:
     matchLabels:
-      bootstrap-heketi: pod
+      bootstrap-heketi: app
   template:
     metadata:
       name: deploy-heketi
       labels:
-        deploy-heketi: pod
+        bootstrap-heketi: app
     spec:
       serviceAccountName: heketi-service-account
       containers:
