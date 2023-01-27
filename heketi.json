@@ -58,7 +58,7 @@
             "vg_physicalextentsize": "4MB",
             "lv_chunksize": "256K",
             "backup_lvm_metadata": false,
-            "gluster_cli_timeout": "10s",
+            "gluster_cli_timeout": 10,
             "_debug_umount_failures": "Optional: boolean to capture more details in case brick unmounting fails",
             "debug_umount_failures": true,
             "lvm_wrapper": ""
