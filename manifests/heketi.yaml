@@ -2,45 +2,45 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: bootstrap-heketi
+  name: heketi-api
   namespace: heketi
   labels:
-    deploy-heketi: service
+    heketi: service
   annotations:
     description: Exposes Heketi Service
 spec:
   selector:
-    deploy-heketi: app
+    heketi: app
   ports:
-  - name: bootstrap-heketi
+  - name: heketi-api
     port: 8080
     targetPort: 8080
 ---
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: bootstrap-heketi
+  name: heketi
   namespace: heketi
   labels:
-    deploy-heketi: app
+    heketi: app
   annotations:
     description: Defines how to deploy Heketi
 spec:
   replicas: 1
   selector:
     matchLabels:
-      deploy-heketi: app
+      heketi: app
   template:
     metadata:
-      name: bootstrap-heketi
+      name: heketi
       labels:
-        deploy-heketi: app
+        heketi: app
     spec:
       serviceAccountName: heketi-service-account
       containers:
       - image: heketi/heketi:latest
         imagePullPolicy: IfNotPresent
-        name: bootstrap-heketi
+        name: heketi
         ports:
         - containerPort: 8080
         volumeMounts:
@@ -62,6 +62,9 @@ spec:
             port: 8080
       volumes:
       - name: db
+        glusterfs:
+          endpoints: heketi-storage-endpoints
+          path: heketidbstorage
       - name: config
         secret:
           secretName: heketi-config
