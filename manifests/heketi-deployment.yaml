@@ -3,7 +3,6 @@ kind: Service
 apiVersion: v1
 metadata:
   name: heketi-api
-  namespace: heketi
   labels:
     heketi: service
   annotations:
@@ -20,7 +19,6 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: heketi
-  namespace: heketi
   labels:
     heketi: app
   annotations:

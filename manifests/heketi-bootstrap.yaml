@@ -3,7 +3,6 @@ kind: Service
 apiVersion: v1
 metadata:
   name: bootstrap-heketi
-  namespace: heketi
   labels:
     deploy-heketi: service
   annotations:
@@ -20,7 +19,6 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: bootstrap-heketi
-  namespace: heketi
   labels:
     deploy-heketi: app
   annotations:

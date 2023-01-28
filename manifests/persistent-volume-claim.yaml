@@ -31,8 +31,20 @@ spec:
         - containerPort: 80
         volumeMounts:
         - mountPath: /usr/share/nginx/html
-          name: nfs-vol
+          name: index-vol
       volumes:
-      - name: nfs-vol
+      - name: index-vol
         persistentVolumeClaim:
-          claimName: nfs-pvc
+          claimName: nginx-volume
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  type: ClusterIP
+  selector:
+    app: nginx
+  ports:
+  - port: 80
+    name: http
